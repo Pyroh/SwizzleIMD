@@ -26,6 +26,13 @@
 //  SOFTWARE.
 //
 
+/* Initializers */
+public extension SIMD3 {
+    @inlinable init(_ x: Scalar, _ yz: SIMD2<Scalar>) {
+        self.init(x, yz[0], yz[1])
+    }
+}
+
 /* XYZ */
 public extension SIMD3 {
     /* TWO COMPONENTS */

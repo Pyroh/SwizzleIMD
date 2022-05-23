@@ -26,6 +26,16 @@
 //  SOFTWARE.
 //
 
+public extension SIMD4 {
+    @inlinable init(_ x: Scalar, _ yzw: SIMD3<Scalar>) {
+        self.init(x, yzw[0], yzw[1], yzw[2])
+    }
+    
+    @inlinable init(_ xy: SIMD2<Scalar>, _ zw: SIMD2<Scalar>) {
+        self.init(xy[0], xy[1], zw[0], zw[1])
+    }
+}
+
 /* XYZW */
 public extension SIMD4 {
     /* TWO COMPONENTS */

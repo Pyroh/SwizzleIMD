@@ -2,6 +2,15 @@ import XCTest
 @testable import SwizzleIMD
 
 final class SwizzleIMDTests: XCTestCase {
+    func testSIMD3Init() {
+        XCTAssertEqual(SIMD3(0, SIMD2(1, 2)), SIMD3(0, 1, 2))
+    }
+    
+    func testSIMD4Init() {
+        XCTAssertEqual(SIMD4(SIMD2(0, 1), SIMD2(2, 3)), SIMD4(0, 1, 2, 3))
+        XCTAssertEqual(SIMD4(0, SIMD3(1, 2, 3)), SIMD4(0, 1, 2, 3))
+    }
+    
     func testSIMD2() {
         let value = SIMD2(0, 1)
         XCTAssertEqual(value.xx,.init(0, 0))
